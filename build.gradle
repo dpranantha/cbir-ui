@@ -1,0 +1,39 @@
+buildscript {
+    apply from: file('gradle/buildscript.gradle'), to: buildscript
+}
+
+apply from: file('gradle/convention.gradle')
+apply from: file('gradle/check.gradle')
+
+allprojects { project ->
+    group 'cbir-ui'
+    version '0.0.1'
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'maven'
+    apply plugin: 'war'
+
+    repositories {
+        repositories {
+            mavenLocal()
+            maven { url = 'http://artifactory.dev.bol.com/artifactory/repo' }
+        }
+    }
+
+    dependencyManagement {
+        dependencies {
+            dependency 'io.atlassian.fugue:fugue:3.0.0'
+        }
+    }
+
+    dependencies {
+        compile files('./src/jar/content-based-product-retrieval-all-0.0.1.jar')
+        compile 'io.atlassian.fugue:fugue'
+    }
+
+    task(run, dependsOn: 'classes', type: JavaExec) {
+        main = 'cbpr.logic.Ranker'
+        classpath = sourceSets.main.runtimeClasspath
+    }
+}

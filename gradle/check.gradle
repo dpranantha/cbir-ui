@@ -1,0 +1,19 @@
+allprojects {
+    // FindBugs
+    apply plugin: 'findbugs'
+    findbugs {
+        ignoreFailures = true
+        toolVersion = "3.0.0"
+    }
+
+    // PMD
+    apply plugin: 'pmd'
+    pmd {
+        ignoreFailures = true
+    }
+
+    apply plugin: 'net.saliman.cobertura'
+    cobertura {
+        coverageFormats = ['html','xml']
+    }
+}

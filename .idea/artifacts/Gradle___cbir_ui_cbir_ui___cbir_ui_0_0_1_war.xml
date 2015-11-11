@@ -1,0 +1,24 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Gradle : cbir-ui:cbir-ui : cbir-ui-0.0.1.war">
+    <output-path>$PROJECT_DIR$/out/artifacts/cbir-ui</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$" />
+    </properties>
+    <root id="archive" name="cbir-ui-0.0.1.war">
+      <element id="javaee-facet-resources" facet="cbir-ui/web/Web Gradle : cbir-ui-0.0.1.war" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="cbir-ui" />
+          <element id="dir-copy" path="$PROJECT_DIR$/build/resources/main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: io.atlassian.fugue:fugue:3.0.0" />
+          <element id="library" level="module" name="Gradle: content-based-product-retrieval-all-0.0.1" module-name="cbir-ui" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/out/artifacts/cbir-ui/exploded/cbir-ui-0.0.1.war/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
