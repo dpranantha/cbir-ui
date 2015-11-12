@@ -54,6 +54,12 @@
         </td>
         <td><img src="images/b-jack5.jpeg" width="150"></td>
       </tr>
+      <tr>
+        <td>
+          <input name="searched-image" type="radio" value="/images/jl1.jpeg"/>
+        </td>
+        <td><img src="images/who.jpeg" width="150"></td>
+      </tr>
     </table>
   </form>
 

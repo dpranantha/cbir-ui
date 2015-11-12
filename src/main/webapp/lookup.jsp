@@ -15,23 +15,31 @@
 <body>
 <%!
     private javax.servlet.http.HttpServletRequest request;
-%><%
+%>
+<%
     Ranker ranker = new Ranker();
     final String requestedImage = request.getParameter("searched-image");
     final String algorithm = request.getParameter("algorithm");
+    final boolean person = requestedImage.contains("jl1.jpeg");
+    final String dbFolder = person ? "/images/search/person/" : "/images/search/";
+%>
 
-    %>
 You're requesting for: <br/>
-<img src="<%=requestedImage%>" sizes="150">
+<%
+    if (person) { %>
+        <img src="images/who.jpeg" width="200">
+<%  } else { %>
+        <img src="<%=requestedImage%>" width="200">
+<%  } %>
 <br/>
+
 results are: <br/>
 <%
-
-    Map<String, Double> ranks = ranker.getRanking(requestedImage,"/images/search/", algorithm);
-
+    Map<String, Double> ranks = ranker.getRanking(requestedImage, dbFolder, algorithm);
     for (Map.Entry rank : ranks.entrySet()) { %>
-<% String path = "images/search/"+rank.getKey();%>
-<img src="<%=path%>" sizes="150"/>&nbsp;
-<%}%>
+<%      String path = dbFolder+rank.getKey();%>
+        <img src="<%=path%>" width="200"/>&nbsp;
+<%  } %>
+
 </body>
 </html>
