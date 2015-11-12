@@ -12,39 +12,49 @@
   </head>
   <body>
   <form method="post" action="lookup.jsp">
-    <table>
+    <table width="500">
       <tr>
         <td colspan="2">
           Image for search:
+        </td>
+        <td>
+          Algorithm:
         </td>
       </tr>
       <tr>
         <td>
           <input name="searched-image" type="radio" value="/images/gucci1.jpeg" checked/>
         </td>
-        <td><img src="images/gucci1.jpeg"></td>
-      </tr>
-      <tr>
-        <td>
-          <input name="searched-image" type="radio" value="/images/search/lv1.jpeg"/>
-        </td>
-        <td><img src="images/search/lv1.jpeg"></td>
-      </tr>
-      <tr>
-        <td valign="top">
-          Algorithm:
-        </td>
-        <td>
+        <td><img src="images/gucci1.jpeg"  width="150"></td>
+        <td rowspan="4" valign="2">
           <input name="algorithm" type="radio" value="fcth" checked/>FCTH<br/>
           <input name="algorithm" type="radio" value="cedd"/>CEDD<br/>
           <input name="algorithm" type="radio" value="tamura"/>Tamura<br/>
           <input name="algorithm" type="radio" value="surf"/>SURF<br/>
           <input name="algorithm" type="radio" value="sift"/>SIFT<br/>
-          <input name="algorithm" type="radio" value="simple" disabled/>SIMPLE
+          <input name="algorithm" type="radio" value="simple" disabled/>SIMPLE<br/>
+          <input type="submit"/>
         </td>
       </tr>
+      <tr>
+        <td>
+          <input name="searched-image" type="radio" value="/images/lv2.jpeg"/>
+        </td>
+        <td><img src="images/lv2.jpeg" width="150"></td>
+      </tr>
+      <tr>
+        <td>
+          <input name="searched-image" type="radio" value="/images/lv-scarf3.jpeg"/>
+        </td>
+        <td><img src="images/lv-scarf3.jpeg"  width="150"></td>
+      </tr>
+      <tr>
+        <td>
+          <input name="searched-image" type="radio" value="/images/b-jack5.jpeg"/>
+        </td>
+        <td><img src="images/b-jack5.jpeg" width="150"></td>
+      </tr>
     </table>
-    <input type="submit"/>
   </form>
 
   </body>

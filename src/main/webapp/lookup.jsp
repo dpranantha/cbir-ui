@@ -20,12 +20,18 @@
     final String requestedImage = request.getParameter("searched-image");
     final String algorithm = request.getParameter("algorithm");
 
-    System.out.println(requestedImage + " " + algorithm);
+    %>
+You're requesting for: <br/>
+<img src="<%=requestedImage%>" sizes="150">
+<br/>
+results are: <br/>
+<%
+
     Map<String, Double> ranks = ranker.getRanking(requestedImage,"/images/search/", algorithm);
 
     for (Map.Entry rank : ranks.entrySet()) { %>
 <% String path = "images/search/"+rank.getKey();%>
-<img src="<%=path%>"/>
+<img src="<%=path%>" sizes="150"/>&nbsp;
 <%}%>
 </body>
 </html>
